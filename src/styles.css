@@ -266,6 +266,204 @@ textarea {
   gap: 8px;
 }
 
+/* 质保尾款看板 */
+.warranty-board {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  margin: 0 auto 18px;
+  max-width: 1240px;
+}
+
+.wstat {
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.wstat span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.wstat strong {
+  display: block;
+  font-size: 1.35rem;
+}
+
+.wstat.pending {
+  background: #f4e7d3;
+  color: #7a531c;
+}
+
+.wstat.frozen {
+  background: #dce6f2;
+  color: #2f4d73;
+}
+
+.wstat.deducted {
+  background: #f2d9d4;
+  color: #7c352b;
+}
+
+.wstat.settled {
+  background: #dcebd9;
+  color: #356033;
+}
+
+/* 卡片内质保尾款 */
+.warranty {
+  border-radius: 8px;
+  border: 1px solid #d7dcd2;
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.warranty.pending {
+  background: #fbf4e8;
+}
+
+.warranty.frozen {
+  background: #eef3fa;
+}
+
+.warranty.deducted {
+  background: #faeae7;
+}
+
+.warranty.settled {
+  background: #eef5ec;
+}
+
+.warranty.none {
+  background: #f2f3ef;
+  color: #7c8479;
+  font-size: 0.85rem;
+}
+
+.warranty-head,
+.warranty-body {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.warranty-body {
+  color: #5c655b;
+  font-size: 0.85rem;
+  justify-content: space-between;
+}
+
+.wstate {
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 10px;
+}
+
+.wstate.pending {
+  background: #e3b477;
+  color: #ffffff;
+}
+
+.wstate.frozen {
+  background: #6d8db3;
+  color: #ffffff;
+}
+
+.wstate.deducted {
+  background: #b35e4e;
+  color: #ffffff;
+}
+
+.wstate.settled {
+  background: #6a9463;
+  color: #ffffff;
+}
+
+.rework-tag {
+  background: #b35e4e;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 10px;
+}
+
+.repair.is-rework {
+  border-color: #d3a097;
+  box-shadow: inset 4px 0 0 #b35e4e;
+}
+
+/* 内联表单与迷你按钮 */
+.inline-form {
+  background: #f7f8f4;
+  border: 1px dashed #b9c2b3;
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.inline-form label {
+  font-size: 0.82rem;
+}
+
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mini {
+  border-radius: 6px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  padding: 7px 12px;
+}
+
+.mini.primary {
+  background: #526d4e;
+  color: #ffffff;
+}
+
+.mini.primary:disabled {
+  background: #b7c0b3;
+  cursor: not-allowed;
+}
+
+.mini.ghost {
+  background: #e9eee6;
+  color: #526d4e;
+}
+
+.ghost.danger,
+.mini.ghost.danger {
+  background: #f3e0dc;
+  color: #8a4036;
+}
+
+.toolbar-label {
+  align-self: center;
+  color: #6e756d;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.warranty-filter {
+  margin-bottom: 10px;
+}
+
+.hint {
+  color: #828a80;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 12px 0 0;
+}
+
 .empty {
   align-items: center;
   color: #828a80;
@@ -288,8 +486,9 @@ textarea {
     padding: 16px;
   }
 
-  .stats {
-    grid-template-columns: 1fr;
+  .stats,
+  .warranty-board {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .repair {
