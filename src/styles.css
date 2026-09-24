@@ -283,6 +283,248 @@ textarea {
   }
 }
 
+/* 质保尾款台账 */
+.ledger {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto 18px;
+  max-width: 1240px;
+}
+
+.ledger-item {
+  background: #ffffff;
+  border: 1px solid #dde1d9;
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.ledger-item span {
+  color: #687166;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.ledger-item strong {
+  display: block;
+  font-size: 1.3rem;
+  margin: 2px 0;
+}
+
+.ledger-item em {
+  color: #8a9187;
+  font-size: 0.76rem;
+  font-style: normal;
+}
+
+.ledger-item.pending { border-left-color: #b9802f; }
+.ledger-item.frozen { border-left-color: #4a6f9e; }
+.ledger-item.deducted { border-left-color: #a84a3c; }
+.ledger-item.settled { border-left-color: #526d4e; }
+
+.warranty-bar .wseg {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+}
+
+.warranty-bar .wseg.active {
+  background: #526d4e;
+}
+
+/* 维修卡片上的质保区块 */
+.warranty {
+  background: #f6f7f2;
+  border: 1px dashed #cdd4c8;
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.warranty.frozen {
+  background: #eef3f9;
+  border-color: #9db6d4;
+}
+
+.warranty.deducted {
+  background: #f8eeec;
+  border-color: #d8a99f;
+}
+
+.warranty.settled {
+  background: #eef4ea;
+  border-color: #aec8a4;
+}
+
+.warranty.none {
+  background: #f3f3f0;
+  border-style: solid;
+  display: flex;
+  gap: 8px;
+}
+
+.warranty-head {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wmeta,
+.wtext {
+  color: #5d655a;
+  font-size: 0.82rem;
+}
+
+.wbadge {
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 3px 10px;
+}
+
+.wbadge.pending { background: #f0d9b4; color: #7a531a; }
+.wbadge.frozen { background: #d6e2f1; color: #2c4c70; }
+.wbadge.deducted { background: #efcfc8; color: #7f3527; }
+.wbadge.settled { background: #d3e4cd; color: #376336; }
+.wbadge.none { background: #e2e4de; color: #6d736a; }
+
+.wactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mini {
+  background: #e9eee6;
+  border-radius: 6px;
+  color: #42583f;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 6px 12px;
+}
+
+.mini.release:not(:disabled) {
+  background: #526d4e;
+  color: white;
+}
+
+.mini:disabled {
+  color: #a3aaa0;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.rework-tag {
+  background: #d6e2f1;
+  border-radius: 999px;
+  color: #2c4c70;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 10px;
+}
+
+.rework {
+  border-color: #9db6d4;
+  box-shadow: inset 4px 0 0 #4a6f9e;
+}
+
+.rework-link {
+  cursor: pointer;
+}
+
+.chip.locked {
+  background: #e8eae4;
+  color: #757c72;
+}
+
+.ghost.danger {
+  color: #8a4a3e;
+}
+
+.wlogs {
+  font-size: 0.78rem;
+}
+
+.wlogs summary {
+  color: #7c8479;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.wlogs ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.wlogs li {
+  color: #5d655a;
+  margin: 2px 0;
+}
+
+.log-on {
+  color: #8a9187;
+  margin-right: 4px;
+}
+
+.repair.flash {
+  animation: flash 1.6s ease;
+}
+
+@keyframes flash {
+  0%, 100% { box-shadow: none; }
+  20% { box-shadow: 0 0 0 3px #b9802f; }
+}
+
+/* 弹窗 */
+.modal-overlay {
+  align-items: center;
+  background: rgba(32, 36, 33, 0.45);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 20px;
+  position: fixed;
+  z-index: 20;
+}
+
+.modal {
+  background: white;
+  border-radius: 10px;
+  max-width: 440px;
+  padding: 20px;
+  width: 100%;
+}
+
+.modal h3 {
+  margin: 0 0 12px;
+}
+
+.modal-body {
+  display: grid;
+  gap: 10px;
+}
+
+.modal-hint {
+  color: #5d655a;
+  font-size: 0.86rem;
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .ledger {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 620px) {
   .shell {
     padding: 16px;
